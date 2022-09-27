@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.griddynamics.reactive.FluxAndMonoGeneratorServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-25T16:52:48" hostname="TKE-cpartida" time="0.173">
+  <properties/>
+  <testcase name="namesFlux()" classname="com.griddynamics.reactive.FluxAndMonoGeneratorServiceTest" time="0.173"/>
+  <system-out><![CDATA[11:52:48.818 [Test worker] DEBUG reactor.util.Loggers$LoggerFactory - Using Slf4j logging framework
+11:52:48.842 [Test worker] INFO reactor.Flux.Iterable.1 - | onSubscribe([Synchronous Fuseable] FluxIterable.IterableSubscription)
+11:52:48.847 [Test worker] INFO reactor.Flux.Iterable.1 - | request(unbounded)
+11:52:48.848 [Test worker] INFO reactor.Flux.Iterable.1 - | onNext(alex)
+11:52:48.849 [Test worker] INFO reactor.Flux.Iterable.1 - | onNext(ben)
+11:52:48.850 [Test worker] INFO reactor.Flux.Iterable.1 - | onNext(chloe)
+11:52:48.850 [Test worker] INFO reactor.Flux.Iterable.1 - | onComplete()
+11:52:48.853 [Test worker] INFO reactor.Flux.MapFuseable.2 - | onSubscribe([Fuseable] FluxMapFuseable.MapFuseableSubscriber)
+11:52:48.853 [Test worker] INFO reactor.Flux.MapFuseable.2 - | request(unbounded)
+11:52:48.853 [Test worker] INFO reactor.Flux.MapFuseable.2 - | onNext(ALEX)
+11:52:48.853 [Test worker] INFO reactor.Flux.MapFuseable.2 - | onNext(BEN)
+11:52:48.853 [Test worker] INFO reactor.Flux.MapFuseable.2 - | onNext(CHLOE)
+11:52:48.853 [Test worker] INFO reactor.Flux.MapFuseable.2 - | onComplete()
+11:52:48.853 [Test worker] INFO reactor.Flux.Iterable.1 - | onSubscribe([Synchronous Fuseable] FluxIterable.IterableSubscription)
+11:52:48.853 [Test worker] INFO reactor.Flux.Iterable.1 - | request(unbounded)
+11:52:48.853 [Test worker] INFO reactor.Flux.Iterable.1 - | onNext(alex)
+11:52:48.854 [Test worker] INFO reactor.Flux.Iterable.1 - | onNext(ben)
+11:52:48.854 [Test worker] INFO reactor.Flux.Iterable.1 - | onNext(chloe)
+11:52:48.854 [Test worker] INFO reactor.Flux.Iterable.1 - | onComplete()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

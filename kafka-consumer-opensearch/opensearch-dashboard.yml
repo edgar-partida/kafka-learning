@@ -1,0 +1,39 @@
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-4.2.0
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    io.kubernetes.cri-o.TTY/opensearchdashboards: "true"
+    io.podman.annotations.autoremove/opensearchdashboards: "FALSE"
+    io.podman.annotations.init/opensearchdashboards: "FALSE"
+    io.podman.annotations.privileged/opensearchdashboards: "FALSE"
+    io.podman.annotations.publish-all/opensearchdashboards: "FALSE"
+  creationTimestamp: "2022-08-30T20:12:05Z"
+  labels:
+    app: opensearchdashboards-pod
+  name: opensearchdashboards-pod
+spec:
+  containers:
+  - args:
+    - opensearchdashboards
+    env:
+    - name: OPENSEARCH_HOSTS
+      value: '["http://opensearch:9200"]'
+    - name: DISABLE_SECURITY_DASHBOARDS_PLUGIN
+      value: "true"
+    image: docker.io/opensearchproject/opensearch-dashboards:1.2.0
+    name: opensearch-dashboards
+    ports:
+    - containerPort: 5601
+      hostPort: 5601
+    securityContext:
+      capabilities:
+        drop:
+        - CAP_MKNOD
+        - CAP_NET_RAW
+        - CAP_AUDIT_WRITE
+    tty: true
+

@@ -1,0 +1,43 @@
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-4.2.0
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    io.kubernetes.cri-o.TTY/opensearch: "true"
+    io.podman.annotations.autoremove/opensearch: "FALSE"
+    io.podman.annotations.init/opensearch: "FALSE"
+    io.podman.annotations.privileged/opensearch: "FALSE"
+    io.podman.annotations.publish-all/opensearch: "FALSE"
+  creationTimestamp: "2022-08-30T20:12:05Z"
+  labels:
+    app: opensearch-pod
+  name: opensearch-pod
+spec:
+  containers:
+  - args:
+    - opensearch
+    env:
+    - name: discovery.type
+      value: single-node
+    - name: plugins.security.disabled
+      value: "true"
+    - name: compatibility.override_main_response_version
+      value: "true"
+    image: docker.io/opensearchproject/opensearch:1.2.4
+    name: opensearch
+    ports:
+    - containerPort: 9200
+      hostPort: 9200
+    - containerPort: 9600
+      hostPort: 9600
+    securityContext:
+      capabilities:
+        drop:
+        - CAP_MKNOD
+        - CAP_NET_RAW
+        - CAP_AUDIT_WRITE
+    tty: true
+

@@ -1,0 +1,6 @@
+rootProject.name = 'KafkaCourse'
+include 'KafkaBasics'
+include 'kafka-producer-wikimedia'
+include 'kafka-consumer-opensearch'
+include 'ReactiveProgrammingTest'
+
